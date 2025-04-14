@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Life Of Duckie</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <div id="main-tab" class="tab active">
+      <div class="icon-bar">
+        <div class="icon-button active" data-tab="main-tab">🦆</div>
+        <div class="icon-button" data-tab="shop-tab">🛒</div>
+        <div class="icon-button" data-tab="achievements-tab">🏆</div>
+        <div class="icon-button" data-tab="quests-tab">📜</div>
+      </div>
+      <div class="action-buttons">
+        <button id="feed-button" aria-label="Feed Duckie">Feed 🥖</button>
+        <button id="fitness-button" aria-label="Workout">Workout 💪</button>
+        <button id="hide-button" aria-label="Find Coin">Find Coin 🌳</button>
+        <button id="revive-button" disabled aria-label="Revive Free">Revive Free (5 left)</button>
+        <button id="buy-duck-button" style="display: none;" aria-label="Buy Duck">Buy Duck 🦆</button>
+      </div>
+      <img id="duck-image" src="images/hungry.png" alt="Duckie">
+      <p class="stats">Stage: <span id="stage-display">Baby</span> | Level: <span id="level-display">1</span> | Coins: <span id="coins-display">0</span> 🪙 | Gems: <span id="gems-display">0</span> 💎 | Deaths: <span id="deaths-display">0</span> 💀</p>
+      <div class="progress-section">
+        <div class="progress-bar" id="xp-bar"><div style="width: 0%"></div></div>
+        <p>XP: <span id="xp-display">0</span>/<span id="xp-needed">100</span></p>
+        <div class="progress-bar" id="energy-bar"><div style="width: 100%"></div></div>
+        <p>Energy: <span id="energy-display">100</span>%</p>
+      </div>
+      <div id="log"></div>
+      <div id="help-button">?</div>
+    </div>
+    <div id="shop-tab" class="tab">
+      <div class="icon-bar">
+        <div class="icon-button" data-tab="main-tab">🦆</div>
+        <div class="icon-button active" data-tab="shop-tab">🛒</div>
+        <div class="icon-button" data-tab="achievements-tab">🏆</div>
+        <div class="icon-button" data-tab="quests-tab">📜</div>
+      </div>
+      <div id="shop-items"></div>
+    </div>
+    <div id="achievements-tab" class="tab">
+      <div class="icon-bar">
+        <div class="icon-button" data-tab="main-tab">🦆</div>
+        <div class="icon-button" data-tab="shop-tab">🛒</div>
+        <div class="icon-button active" data-tab="achievements-tab">🏆</div>
+        <div class="icon-button" data-tab="quests-tab">📜</div>
+      </div>
+      <h2>Achievements</h2>
+      <div id="achievements-list"></div>
+    </div>
+    <div id="quests-tab" class="tab">
+      <div class="icon-bar">
+        <div class="icon-button" data-tab="main-tab">🦆</div>
+        <div class="icon-button" data-tab="shop-tab">🛒</div>
+        <div class="icon-button" data-tab="achievements-tab">🏆</div>
+        <div class="icon-button active" data-tab="quests-tab">📜</div>
+      </div>
+      <h2>Quests</h2>
+      <div id="quests-list"></div>
+    </div>
+    <div id="hide-game-box">
+      <div id="hide-game-close">✖</div>
+    </div>
+  </div>
+  <div id="modal">
+    <div id="modal-content">
+      <p id="modal-text"></p>
+      <button id="modal-option1">Accept</button>
+      <button id="modal-option2">Ignore</button>
+      <button id="modal-next" style="display: none;">Next</button>
+      <button id="modal-done" style="display: none;">Done</button>
+    </div>
+  </div>
+  <script src="game.js" defer></script>
+</body>
+</html>
